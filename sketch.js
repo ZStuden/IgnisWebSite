@@ -1,3 +1,6 @@
+var tri = 0
+var word = 0;
+
 function setup() {
   createCanvas(500, 500);
 }
@@ -5,9 +8,14 @@ function setup() {
 function draw() {
   background(255,195,0);
   fill(100,100,127,150);
-  textSize(45);
+  textSize(word);
   textFont('Arial Rounded MT Bold');
   text('Fire!', mouseX, mouseY);
+  word = word + 5
+
+  if (word >= 450) {
+    word = 0
+  }
 
   push();
   translate(width * 0.5, height * 0.5);
@@ -19,6 +27,7 @@ function draw() {
   stroke(255,68,51)
 
 }
+
 
 function star(x, y, radius1, radius2, npoints) {
   fill(255,228,132)
